@@ -2,18 +2,14 @@
 
 Este espacio presenta la información para organizar el desarrollo del Proyecto de Estudio de la asignatura Bases de Datos I (FaCENA - UNNE), centrado en un sistema de Gestión de Tareas (gestor_tareas).
 
----
-
-**Integrantes**
+### Integrantes
 
 - Barrios, Enzo Tómas
 - Bongiovanni, Iara Aylen
 - Diaz, Franco Benjamin
 - Marano, Bruno Joel
 
----
-
-**Estructura inicial del proyecto en el repositorio**
+### Estructura inicial del proyecto en el repositorio\*\*
 
       Gestion_Tareas_BDO/
       -> doc/ (carpeta con documentos e imágenes asociados al contenido principal)
@@ -30,7 +26,7 @@ Este espacio presenta la información para organizar el desarrollo del Proyecto 
 
 ---
 
-**Estructura del documento principal:**
+### Estructura del documento principal:
 
 - PORTADA/PRESENTACIÓN
 - INDICE O SUMARIO
