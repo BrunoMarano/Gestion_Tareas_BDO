@@ -1,24 +1,36 @@
 # Bases de Datos I - Proyecto de Estudio
-Este espacio propone presentar la información para organizar el desarrollo del Proyecto de Estudio de la asignatura Bases de Datos I (FaCENA - UNNE)
 
+Este espacio presenta la información para organizar el desarrollo del Proyecto de Estudio de la asignatura Bases de Datos I (FaCENA - UNNE), centrado en un sistema de Gestión de Tareas (gestor_tareas).
 
-# Proyecto de Estudio!
+### Integrantes:
 
-Este espacio propone presentar la información para organizar el desarrollo del Proyecto de Estudio de la asignatura Bases de Datos I (FaCENA - UNNE)
+- Barrios, Enzo Tómas
+- Bongiovanni, Iara Aylen
+- Diaz, Franco Benjamin
+- Marano, Bruno Joel
 
-Este borrador fue elaborado usando https://stackedit.io/app#
+### Estructura inicial del proyecto en el repositorio:
 
-**Estructura inicial del proyecto en el repositorio**
+      Gestion_Tareas_BDO/
+      -> doc/ (carpeta con documentos e imágenes asociados al contenido principal)
+      -> script/ (capeta de código del proyecto)
+      --> tema_01/
+      ---> ... (Archivos para el tema 01)
+      -->tema_02/
+      ---> ... (Archivos para el tema 01)
+      -->tema_03/
+      ---> ... (Archivos para el tema 01)
+      -->tema_04/
+      ---> ... (Archivos para el tema 01)
+      ->Gestor_Tareas.md (documento principal estructurado por capítulos)
 
-    proyecto_estudio
-    ->doc (carpeta con documentos e imágenes asociados al contenido principal)
-    ->script (capeta de código del proyecto)
-	---->tema_01 (sub-carpeta específica del tema)
-		  tema01_script01.sql
-		  tema01_script02.sql
-		  tema_nombre.md (descripción completa del procedimiento para implementar el tema técnico de estudio)
-	---->tema_2
-	----> ...
-    ->nombre_proyecto.md (documento principal estructurado por capítulos)
-    
-**Estructura del documento principal:**
+### Estructura del documento principal:
+
+- PORTADA/PRESENTACIÓN
+- INDICE O SUMARIO
+- CAPITULO I: INTRODUCCION
+- CAPITULO II: MARCO CONCEPTUAL o REFERENCIAL
+- CAPÍTULO III: METODOLOGÍA
+- CAPITULO IV: DESARROLLO DEL TEMA/RESULTADOS
+- CAPITULO V: CONCLUSIONES
+- CAPTITULO VI: BIBLIOGRAFÍA
