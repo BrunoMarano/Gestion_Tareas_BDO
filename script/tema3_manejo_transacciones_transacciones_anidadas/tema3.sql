@@ -1,9 +1,9 @@
-USE gestion_proyecto;
+ÔªøUSE gestion_proyecto;
 
-/*Escribir el cÛdigo Transact SQL que permita definir una transacciÛn consistente en:
+/*Escribir el c√≥digo Transact SQL que permita definir una transacci√≥n consistente en:
 Insertar un registro en alguna tabla, luego otro registro en otra tabla 
-y por ˙ltimo la actualizaciÛn de uno o m·s registros en otra tabla. 
-Actualizar los datos solamente si toda la operaciÛn es completada con Èxito.*/
+y por √∫ltimo la actualizaci√≥n de uno o m√°s registros en otra tabla. 
+Actualizar los datos solamente si toda la operaci√≥n es completada con √©xito.*/
 
 BEGIN TRY
 	BEGIN TRANSACTION -- Inicia la transaccion principal
@@ -14,52 +14,67 @@ BEGIN TRY
 
 	-- Insertar un nuevo proyecto
 	INSERT INTO proyecto (id_proyecto, nombre, descripcion, fecha_creacion, fecha_fin)
-	VALUES (1, 'Sistema de gestiÛn', 'Proyecto para la gestion de tareas', GETDATE(), NULL);
+	VALUES (1, 'Sistema de gesti√≥n', 'Proyecto para la gestion de tareas', GETDATE(), NULL);
 
-	-- Actualizar el nombre del proyecto (solo se confirma si todo lo anterior saliÛ bien)
+	-- Actualizar el nombre del proyecto (solo se confirma si todo lo anterior sali√≥ bien)
 	UPDATE proyecto
-	SET nombre = 'Sistema de GestiÛn de Proyectos'
+	SET nombre = 'Sistema de Gesti√≥n de Proyectos'
 	WHERE id_proyecto = 1;
 
 	COMMIT TRANSACTION; --Confirma todo si hubo errores
-	PRINT 'TransacciÛn completada correctamente.';
+	PRINT 'Transacci√≥n completada correctamente.';
 END TRY
 
 BEGIN CATCH
 	ROLLBACK TRANSACTION; --Revierte todo si ocurre un error
-	PRINT 'Error detectado. Se revierte la transacciÛn.';
+	PRINT 'Error detectado. Se revierte la transacci√≥n.';
 	PRINT ERROR_MESSAGE();
 END CATCH;
 
-/*Sobre el cÛdigo escrito anteriormente provocar intencionalmente un error luego del insert 
-y verificar que los datos queden consistentes (No se deberÌa realizar ning˙n insert).*/
-BEGIN TRY
-	BEGIN TRANSACTION;
+/*Sobre el c√≥digo escrito anteriormente provocar intencionalmente un error luego del insert 
+y verificar que los datos queden consistentes (No se deber√≠a realizar ning√∫n insert).*/
 
-	-- Insertar un nuevo usuario v·lido
+
+/* Transacci√≥n principal con SAVEPOINT (transacci√≥n anidada) */
+BEGIN TRY
+	BEGIN TRANSACTION;   -- Inicia la transacci√≥n principal
+
+    -- Insertar un nuevo usuario (v√°lido)
 	INSERT INTO usuario (id_usuario, nombre, email, contrasena)
     VALUES (101, 'Enzo Barrios', 'enzobarrios@gmail.com', 'abcd');
 
 	PRINT 'Usuario insertado correctamente';
 
-	-- Insertar otro usuario con el mismo email 
+	-- Crear un SAVEPOINT antes de una posible falla
+	SAVE TRANSACTION transaccion_anidada;
+	PRINT 'SAVEPOINT creado correctamente';
+
+	-- Insertar otro usuario con email repetido ‚Üí provocar√° un error
 	INSERT INTO usuario (id_usuario, nombre, email, contrasena)
-	VALUES (102, 'Bruno Marano', 'brunomarano@gmail.com', '1234');
+	VALUES (102, 'Bruno Marano', 'enzobarrios@gmail.com', '1234');
 
 	PRINT 'Segundo usuario insertado correctamente';
 
-	--Intentar actualizar (no deberÌa ejecutarse si ocurre el error anterior)
+	-- Esta actualizaci√≥n no deber√≠a ejecutarse si se produjo error antes
 	UPDATE proyecto
-	SET descripcion = 'ActualizaciÛn despues del error'
+	SET descripcion = 'Actualizaci√≥n despues del error'
 	WHERE id_proyecto = 100;
 
 	COMMIT TRANSACTION;
-	PRINT 'TRANSACCI”N COMPLETADA (esto NO deberÌa verse si hay error).';
+	PRINT 'TRANSACCI√ìN COMPLETADA (no deber√≠a verse si hay error).';
 END TRY
 
 BEGIN CATCH
+	PRINT 'Error detectado.';
+
+	-- Volvemos al SAVEPOINT (transacci√≥n hija)
+	ROLLBACK TRANSACTION transaccion_anidada;
+	PRINT 'Se realiz√≥ rollback SOLO al SAVEPOINT, no a la transacci√≥n completa.';
+
+	-- Finalmente revertimos toda la transacci√≥n principal
 	ROLLBACK TRANSACTION;
-	PRINT 'Error detectado, se revierte la transacciÛn';
+	PRINT 'Se revirti√≥ tambi√©n la transacci√≥n principal.';
+
 	PRINT ERROR_MESSAGE();
 END CATCH;
 GO

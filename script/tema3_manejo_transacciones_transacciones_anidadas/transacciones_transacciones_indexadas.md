@@ -46,7 +46,13 @@ SQL Server soporta parcialmente este tipo de transacciones, utilizando **SAVE TR
 ## 1.5 Crear una transacción
 
 A continuación se muestra un ejemplo de **transacción simple** aplicada a la base de datos `gestion_proyecto`.  
-Esta transacción inserta un nuevo **usuario**, crea un **proyecto** y luego actualiza la **fecha de finalización** del proyecto si todo fue exitoso.
+En esta transacción se realizan tres operaciones consecutivas:  
+1. Se inserta un nuevo usuario.  
+2. Se inserta un nuevo proyecto.  
+3. Se actualiza el nombre de ese proyecto.  
+
+Si las tres operaciones se ejecutan correctamente, la transacción se confirma con `COMMIT`.  
+Si ocurre un error en cualquiera de los pasos, toda la transacción se revierte con `ROLLBACK`, asegurando que **no quede ningún dato inconsistente**.
 
 ```sql
 USE gestion_proyecto;
@@ -79,4 +85,57 @@ BEGIN CATCH
 END CATCH;
 ```
 
-##1.6
+##1.6 Crear una transacción anidada
+
+Ahora se muestra una transacción anidada, también sobre la base `gestion_proyecto`.
+En este caso, se realiza un `INSERT` inicial de un usuario válido y luego se ejecuta una segunda operación que generará un error (la inserción de un email duplicado).  
+Antes de esta operación problemática, se define un **SAVEPOINT**, lo que permite controlar qué parte de la transacción se puede revertir.
+
+Si ocurre el error (como está diseñado), la transacción completa vuelve a su estado inicial gracias al `ROLLBACK`, garantizando que **ninguno de los inserts quede grabado**.
+
+Este ejemplo muestra cómo una transacción anidada permite manejar fallos parciales de forma más fina utilizando puntos de guardado.
+```sql
+/* Transacción principal con SAVEPOINT (transacción anidada) */
+BEGIN TRY
+	BEGIN TRANSACTION;   -- Inicia la transacción principal
+
+    -- Insertar un nuevo usuario (válido)
+	INSERT INTO usuario (id_usuario, nombre, email, contrasena)
+    VALUES (101, 'Enzo Barrios', 'enzobarrios@gmail.com', 'abcd');
+
+	PRINT 'Usuario insertado correctamente';
+
+	-- Crear un SAVEPOINT antes de una posible falla
+	SAVE TRANSACTION transaccion_anidada;
+	PRINT 'SAVEPOINT creado correctamente';
+
+	-- Insertar otro usuario con email repetido → provocará un error
+	INSERT INTO usuario (id_usuario, nombre, email, contrasena)
+	VALUES (102, 'Bruno Marano', 'enzobarrios@gmail.com', '1234');
+
+	PRINT 'Segundo usuario insertado correctamente';
+
+	-- Esta actualización no debería ejecutarse si se produjo error antes
+	UPDATE proyecto
+	SET descripcion = 'Actualización despues del error'
+	WHERE id_proyecto = 100;
+
+	COMMIT TRANSACTION;
+	PRINT 'TRANSACCIÓN COMPLETADA (no debería verse si hay error).';
+END TRY
+
+BEGIN CATCH
+	PRINT 'Error detectado.';
+
+	-- Volvemos al SAVEPOINT (transacción hija)
+	ROLLBACK TRANSACTION transaccion_anidada;
+	PRINT 'Se realizó rollback SOLO al SAVEPOINT, no a la transacción completa.';
+
+	-- Finalmente revertimos toda la transacción principal
+	ROLLBACK TRANSACTION;
+	PRINT 'Se revirtió también la transacción principal.';
+
+	PRINT ERROR_MESSAGE();
+END CATCH;
+GO
+```
