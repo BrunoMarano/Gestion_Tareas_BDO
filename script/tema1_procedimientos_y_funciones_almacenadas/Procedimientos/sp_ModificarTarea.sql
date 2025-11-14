@@ -2,22 +2,26 @@ USE gestion_proyecto;
 GO
 
 CREATE PROCEDURE sp_ModificarTarea
-    @ID_Tarea INT, 
-    @Titulo VARCHAR(100),
-    @Descripcion VARCHAR(500),
-    @Fecha_Vencimiento DATE,
-    @ID_Estado INT
+    @id_tarea INT, 
+    @titulo VARCHAR(150),
+    @descripcion VARCHAR(200),
+    @fecha_vencimiento DATE,
+    @id_proyecto INT,
+    @id_responsable INT,
+    @id_estado INT
 AS
 BEGIN
     SET NOCOUNT ON;
 
-    UPDATE Tarea
+    UPDATE tarea
     SET
-        Titulo = @Titulo,
-        Descripcion = @Descripcion,
-        Fecha_Vencimiento = @Fecha_Vencimiento,
-        ID_Estado = @ID_Estado
+        titulo = @titulo,
+        descripcion = @descripcion,
+        fecha_vencimiento = @fecha_vencimiento,
+        id_proyecto = @id_proyecto,
+        id_responsable = @id_responsable,
+        id_estado = @id_estado
     WHERE
-        ID_Tarea = @ID_Tarea; 
+        id_tarea = @id_tarea; 
 END;
 GO

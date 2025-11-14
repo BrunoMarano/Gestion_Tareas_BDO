@@ -2,13 +2,13 @@ USE gestion_proyecto;
 GO
 
 CREATE PROCEDURE sp_EliminarTarea
-    @ID_Tarea INT 
+    @id_tarea INT 
 AS
 BEGIN
     SET NOCOUNT ON;
 
-    DELETE FROM Tarea
+    DELETE FROM tarea
     WHERE
-        ID_Tarea = @ID_Tarea; 
+        id_tarea = @id_tarea; 
 END;
 GO
