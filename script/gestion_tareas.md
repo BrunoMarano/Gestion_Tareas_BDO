@@ -137,7 +137,8 @@ En este capítulo se presentan los principales resultados obtenidos del análisi
 
 ### Diagrama relacional
 
-![diagrama_relacional](doc/diagrama_relacional_proyecto.jpeg)
+![diagrama_relacional](../doc/diagrama_relacional_proyecto.jpeg)
+
 
 ### Diccionario de datos
 
