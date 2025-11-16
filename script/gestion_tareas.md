@@ -144,19 +144,35 @@ En este capítulo se presentan los principales resultados obtenidos del análisi
 
 Acceso al documento [PDF](doc/diccionario_datos.pdf) del diccionario de datos.
 
-### Desarrollo TEMA 1 "----"
+## Desarrollo TEMA 1: Procedimientos y Funciones Almacenadas
+Aquí se desarrolla el contenido correspondiente al uso, creación y manejo de procedimientos almacenados y funciones dentro del sistema gestor de base de datos.
 
-Fusce auctor finibus lectus, in aliquam orci fermentum id. Fusce sagittis lacus ante, et sodales eros porta interdum. Donec sed lacus et eros condimentum posuere.
+🔗 Acceder a la carpeta del tema:  
+**[scripts → tema1_procedimientos_y_funciones_almacenadas](../tema1_procedimientos_y_funciones_almacenadas/)**
 
-> Acceder a la siguiente carpeta para la descripción completa del tema [scripts-> tema_1](script/tema01_nombre_tema)
+---
 
-### Desarrollo TEMA 2 "----"
+## Desarrollo TEMA 2: Optimización de Consultas a Través de Índices
+Este apartado aborda la creación y análisis de índices, así como su impacto en el rendimiento de las consultas SQL.
 
-Proin aliquet mauris id ex venenatis, eget fermentum lectus malesuada. Maecenas a purus arcu. Etiam pellentesque tempor dictum.
+🔗 Acceder a la carpeta del tema:  
+**[scripts → tema2_optimizacion_de_consultas_a_traves_de_indices](../tema2_optimizacion_de_consultas_a_traves_de_indices/)**
 
-> Acceder a la siguiente carpeta para la descripción completa del tema [scripts-> tema_2](script/tema02_nombre_tema)
+---
 
-...
+## Desarrollo TEMA 3: Manejo de Transacciones y Transacciones Anidadas
+Aquí se explica el concepto de transacción, sus propiedades ACID y la implementación de transacciones anidadas.
+
+🔗 Acceder a la carpeta del tema:  
+**[scripts → tema3_manejo_de_transacciones_y_transacciones_anidadas](../tema3_manejo_de_transacciones_y_transacciones_anidadas/)**
+
+---
+
+## Desarrollo TEMA 4: Vistas y Vistas Indexadas
+Se desarrolla el manejo de vistas, vistas indexadas, sus ventajas y el uso de `WITH SCHEMABINDING`.
+
+🔗 Acceder a la carpeta del tema:  
+**[scripts → tema4_vistas_vistas_indexadas](../tema4_vistas_vistas_indexadas/)**
 
 ## CAPÍTULO V: CONCLUSIONES
 
