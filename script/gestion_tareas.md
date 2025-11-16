@@ -148,7 +148,7 @@ Acceso al documento [PDF](doc/diccionario_datos.pdf) del diccionario de datos.
 Aquí se desarrolla el contenido correspondiente al uso, creación y manejo de procedimientos almacenados y funciones dentro del sistema gestor de base de datos.
 
 🔗 Acceder a la carpeta del tema:  
-**[scripts → tema1_procedimientos_y_funciones_almacenadas](../tema1_procedimientos_y_funciones_almacenadas/)**
+**[scripts → tema1_procedimientos_y_funciones_almacenadas](tema1_procedimientos_y_funciones_almacenadas/)**
 
 ---
 
@@ -156,7 +156,7 @@ Aquí se desarrolla el contenido correspondiente al uso, creación y manejo de p
 Este apartado aborda la creación y análisis de índices, así como su impacto en el rendimiento de las consultas SQL.
 
 🔗 Acceder a la carpeta del tema:  
-**[scripts → tema2_optimizacion_de_consultas_a_traves_de_indices](../tema2_optimizacion_de_consultas_a_traves_de_indices/)**
+**[scripts → tema2_optimizacion_de_consultas_a_traves_de_indices](tema2_optimizacion_de_consultas_a_traves_de_indices/)**
 
 ---
 
@@ -164,7 +164,7 @@ Este apartado aborda la creación y análisis de índices, así como su impacto 
 Aquí se explica el concepto de transacción, sus propiedades ACID y la implementación de transacciones anidadas.
 
 🔗 Acceder a la carpeta del tema:  
-**[scripts → tema3_manejo_de_transacciones_y_transacciones_anidadas](../tema3_manejo_de_transacciones_y_transacciones_anidadas/)**
+**[scripts → tema3_manejo_de_transacciones_y_transacciones_anidadas](tema3_manejo_de_transacciones_y_transacciones_anidadas/)**
 
 ---
 
@@ -172,7 +172,7 @@ Aquí se explica el concepto de transacción, sus propiedades ACID y la implemen
 Se desarrolla el manejo de vistas, vistas indexadas, sus ventajas y el uso de `WITH SCHEMABINDING`.
 
 🔗 Acceder a la carpeta del tema:  
-**[scripts → tema4_vistas_vistas_indexadas](../tema4_vistas_vistas_indexadas/)**
+**[scripts → tema4_vistas_vistas_indexadas](tema4_vistas_vistas_indexadas/)**
 
 ## CAPÍTULO V: CONCLUSIONES
 
