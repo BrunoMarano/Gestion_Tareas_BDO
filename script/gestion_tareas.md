@@ -135,25 +135,9 @@ En este capítulo se presentan los principales resultados obtenidos del análisi
 
 ○ Se garantiza la integridad de los datos a través de claves primarias y foráneas.
 
-### Diagrama conceptual (opcional)
-
-Ejemplo usando Live Editor https://mermaid.js.org/ (ejemplo opcional)
-
-```mermaid
-erDiagram
-CUSTOMER  }|..|{  DELIVERY-ADDRESS  : has
-CUSTOMER  ||--o{  ORDER  : places
-CUSTOMER  ||--o{  INVOICE  : "liable for"
-DELIVERY-ADDRESS  ||--o{  ORDER  : receives
-INVOICE  ||--|{  ORDER  : covers
-ORDER  ||--|{  ORDER-ITEM  : includes
-PRODUCT-CATEGORY  ||--|{  PRODUCT  : contains
-PRODUCT  ||--o{  ORDER-ITEM  : "ordered in"
-```
-
 ### Diagrama relacional
 
-![diagrama_relacional](https://github.com/dovillegas/basesdatos_proyecto_estudio/blob/main/doc/image_relational.png)
+![diagrama_relacional](doc/diagrama_relacional_proyecto.jpeg)
 
 ### Diccionario de datos
 
