@@ -142,7 +142,7 @@ En este capítulo se presentan los principales resultados obtenidos del análisi
 
 ### Diccionario de datos
 
-Acceso al documento [PDF](doc/diccionario_datos.pdf) del diccionario de datos.
+Acceso al documento [PDF](../doc/diccionario_datos.pdf) del diccionario de datos.
 
 ## Desarrollo TEMA 1: Procedimientos y Funciones Almacenadas
 Aquí se desarrolla el contenido correspondiente al uso, creación y manejo de procedimientos almacenados y funciones dentro del sistema gestor de base de datos.
