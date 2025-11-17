@@ -1,7 +1,7 @@
 # Investigación: Procedimientos y Funciones Almacenadas
 
 **Asignatura:** Bases de Datos I
-**Proyecto:** Gestor de Tareas (Ejemplo de Aplicación)
+**Proyecto:** Gestor de Tareas
 
 ## 1. Procedimientos Almacenados (Stored Procedures)
 
