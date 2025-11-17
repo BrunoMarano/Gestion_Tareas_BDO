@@ -1,7 +1,9 @@
 USE gestion_proyecto;
 GO
 
+--	INSERTAR tarea
 CREATE PROCEDURE sp_InsertarTarea
+    --	El/los parametro/s seguido del tipo de dato
     @titulo VARCHAR(150),
     @descripcion VARCHAR(200),
     @fecha_vencimiento DATE,
@@ -9,9 +11,10 @@ CREATE PROCEDURE sp_InsertarTarea
     @id_responsable INT,
     @id_estado INT
 AS
-BEGIN
+BEGIN   --  Manejo de transacciones
     SET NOCOUNT ON;
 
+    --	Operacion CRUD
     INSERT INTO tarea (
         titulo,
         descripcion,
