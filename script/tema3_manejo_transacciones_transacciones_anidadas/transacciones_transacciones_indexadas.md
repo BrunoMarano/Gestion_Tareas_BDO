@@ -85,7 +85,7 @@ BEGIN CATCH
 END CATCH;
 ```
 
-##1.6 Crear una transacción anidada
+## 1.6 Crear una transacción anidada
 
 Ahora se muestra una transacción anidada, también sobre la base `gestion_proyecto`.
 En este caso, se realiza un `INSERT` inicial de un usuario válido y luego se ejecuta una segunda operación que generará un error (la inserción de un email duplicado).  
