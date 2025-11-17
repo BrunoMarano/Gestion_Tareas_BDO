@@ -9,10 +9,6 @@ FROM usuario;
 GO
 
 --Realizar insert de un lote de datos sobre la vista reci�n creada. 
-ALTER TABLE usuario
-ADD CONSTRAINT df_usuario_password DEFAULT 'temporal123' FOR password;
-GO
-
 INSERT INTO vista_usuario (id_usuario, nombre, email)
 VALUES
 	(1, 'Enzo Barrios', 'enzobarrios@gmail.com'),
@@ -43,7 +39,7 @@ GO
 SELECT * FROM vista_usuario;
 GO
 
---Crear un �ndice sobre alguna de las columnas sobre la vista  reci�n creada.
+--Crear un �ndice sobre alguna de las columnas sobre la vista reci�n creada.
 
 CREATE VIEW vista_usuario_indexada WITH SCHEMABINDING 
 AS
@@ -51,8 +47,28 @@ SELECT id_usuario, nombre, email
 FROM dbo.usuario;
 GO
 
+--Ver si la vista está creada:
+SELECT *
+FROM sys.views
+WHERE name = 'vista_usuario_indexada';
+
+--Un índice clustered en la vista significa que SQL Server guarda los datos físicamente, acelerando consultas.
 CREATE UNIQUE CLUSTERED INDEX IX_vista_usuario_indexada_id ON vista_usuario_indexada (id_usuario);
 GO
+
+--Ver si tiene un índice único cluster creado:
+SELECT *
+FROM sys.indexes
+WHERE object_id = OBJECT_ID('vista_usuario_indexada');
+
+
+--Ver si está “materializada”
+SELECT name, type_desc
+FROM sys.indexes
+WHERE object_id = OBJECT_ID('vista_usuario_indexada');
+
+
+SELECT * FROM vista_usuario_indexada;  --Debe devolver los datos normales.
 
 -----------------------------------------------------------------
 
