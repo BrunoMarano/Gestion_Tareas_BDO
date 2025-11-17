@@ -1,7 +1,9 @@
 USE gestion_proyecto;
 GO
 
+--	MODIFICAR tarea
 CREATE PROCEDURE sp_ModificarTarea
+    --	El/los parametro/s seguido del tipo de dato
     @id_tarea INT, 
     @titulo VARCHAR(150),
     @descripcion VARCHAR(200),
@@ -10,9 +12,10 @@ CREATE PROCEDURE sp_ModificarTarea
     @id_responsable INT,
     @id_estado INT
 AS
-BEGIN
+BEGIN   --	Manejo de transacciones
     SET NOCOUNT ON;
 
+    --	Operacion CRUD
     UPDATE tarea
     SET
         titulo = @titulo,
