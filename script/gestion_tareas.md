@@ -17,30 +17,30 @@
 
 ### Caso de estudio
 
-El presente trabajo práctico tiene como finalidad el diseño y modelado de una base de datos para la gestión de cadetes dentro de una empresa. El sistema busca organizar de manera eficiente las tareas y proyectos que los cadetes deben realizar, asegurando un mejor seguimiento de sus responsabilidades, roles y estados de avance.
+El presente trabajo práctico tiene como finalidad el diseño y modelado de una base de datos para la gestión de tareas dentro de una empresa. El sistema busca organizar de manera eficiente las tareas y proyectos que los empleados deben realizar, asegurando un mejor seguimiento de sus responsabilidades, roles y estados de avance.
 
 ### Definición o planteamiento del problema
 
-En muchas empresas, los cadetes cumplen un rol esencial para realizar tareas externas (trámites, entregas, correspondencia, compras, etc.), pero a menudo la asignación y control de esas tareas se realiza de manera manual o informal, lo que genera varios inconvenientes:
+En muchas empresas, los empleados cumplen un rol esencial para realizar tareas externas (trámites, entregas, correspondencia, compras, etc.), pero a menudo la asignación y control de esas tareas se realiza de manera manual o informal, lo que genera varios inconvenientes:
 ● Pérdida de información sobre las tareas realizadas.
 
-● Dificultad para hacer un seguimiento del estado de cada trámite.
+● Dificultad para hacer un seguimiento del estado de cada tarea.
 
-● Problemas en la asignación de responsabilidades entre los cadetes.
+● Problemas en la asignación de responsabilidades entre los empleados.
 
 ● Falta de un registro histórico que permita evaluar eficiencia y desempeño.
 
-Ante esta situación, surge la necesidad de un sistema de base de datos que permita centralizar la información de los proyectos y tareas de los cadetes, mejorando el control, la organización y el análisis de la información.
+Ante esta situación, surge la necesidad de un sistema de base de datos que permita centralizar la información de los proyectos y tareas de los empleados, mejorando el control, la organización y el análisis de la información.
 
 Objetivo General:
-Desarrollar una base de datos que permita gestionar las tareas y proyectos de los cadetes de una empresa, garantizando la asignación eficiente de actividades, el control de estados y la trazabilidad de la información.
+Desarrollar una base de datos que permita gestionar las tareas y proyectos de los empleados de una empresa, garantizando la asignación eficiente de actividades, el control de estados y la trazabilidad de la información.
 Objetivos Específicos:
-● Diseñar un modelo de datos que contemple usuarios (cadetes), proyectos, tareas, estados, categorías y roles.
-● Implementar una estructura que permita asignar tareas a cadetes de manera clara y controlada.
+● Diseñar un modelo de datos que contemple usuarios (empleados), proyectos, tareas, estados, categorías y roles.
+● Implementar una estructura que permita asignar tareas a empleados de manera clara y controlada.
 
 ● Registrar los estados de cada tarea (pendiente, en proceso, finalizada, cancelada).
 
-● Clasificar las tareas por categorías para un mejor análisis (ejemplo: trámites bancarios, mensajería, compras).
+● Clasificar las tareas por categorías para un mejor análisis (ejemplo: trámites, mensajería, compras).
 
 ● Incorporar comentarios como mecanismo de seguimiento de cada actividad.
 
@@ -48,22 +48,22 @@ Objetivos Específicos:
 
 ## CAPITULO II: MARCO CONCEPTUAL O REFERENCIAL
 
-En la actualidad, las empresas buscan optimizar la gestión de tareas internas y externas para mejorar su productividad. Los cadetes cumplen un rol fundamental, ya que son responsables de trámites, entregas, correspondencia y diversas actividades que requieren organización y control.
+En la actualidad, las empresas buscan optimizar la gestión de tareas internas y externas para mejorar su productividad. Los empleados cumplen un rol fundamental, ya que son responsables de trámites, entregas, correspondencia y diversas actividades que requieren organización y control.
 El diseño de una base de datos relacional permite centralizar y estructurar la información relacionada con estas tareas, garantizando integridad, trazabilidad y eficiencia en la administración.
 Los conceptos fundamentales que sustentan el proyecto son:
 ● Base de datos relacional: modelo que organiza la información en tablas relacionadas entre sí mediante claves primarias y foráneas, garantizando la integridad de los datos.
 
 ● Gestión de tareas: práctica que permite organizar, asignar y controlar actividades específicas de una organización, mejorando la productividad y evitando pérdidas de información.
 
-● Roles y usuarios: cada participante del sistema tiene un rol definido (ejemplo: cadete, supervisor), lo que permite controlar permisos y responsabilidades.
+● Roles y usuarios: cada participante del sistema tiene un rol definido (ejemplo: empleado, supervisor), lo que permite controlar permisos y responsabilidades.
 
 ● Estados de tareas: permiten conocer en qué situación se encuentra cada actividad (pendiente, en curso, finalizada, cancelada).
 
-● Categorías de tareas: posibilitan clasificar los distintos tipos de actividades (ejemplo: trámites bancarios, compras, mensajería).
+● Categorías de tareas: posibilitan clasificar los distintos tipos de actividades (ejemplo: trámites, compras, mensajería).
 
 ● TICs (Tecnologías de la Información y la Comunicación): proporcionan herramientas que permiten digitalizar procesos que tradicionalmente se realizaban de forma manual.
 
-De este modo, el sistema se fundamenta en innovaciones tecnológicas aplicadas a la gestión organizacional, contribuyendo a un mayor control, análisis y planificación de las actividades de los cadetes dentro de una empresa.
+De este modo, el sistema se fundamenta en innovaciones tecnológicas aplicadas a la gestión organizacional, contribuyendo a un mayor control, análisis y planificación de las actividades de los empleados dentro de una empresa.
 
 **TEMA 1 " Procedimientos y Funciones Almacenadas "** 
 Para el Tema 1 investigamos en profundidad sobre los procedimientos y funciones almacenadas, elementos esenciales para estructurar y optimizar la lógica dentro de una base de datos SQL Server. Los procedimientos almacenados permiten ejecutar operaciones complejas, realizar tareas CRUD, manejar transacciones y encapsular la lógica de negocio, logrando mejor rendimiento gracias a los planes de ejecución cacheados y mayor seguridad al otorgar solo permisos de ejecución. Por otro lado, las funciones almacenadas están orientadas exclusivamente al cálculo: siempre devuelven un valor, ya sea escalar o una tabla, y no pueden modificar datos, lo que las hace ideales para usarse dentro de SELECT, WHERE o JOIN. Además, facilitan la reutilización de lógica y la escritura de consultas más limpias. En conclusión, los procedimientos se utilizan principalmente para acciones y manipulación de datos, mientras que las funciones se emplean para cálculos y obtener información de manera controlada.
@@ -113,11 +113,11 @@ En este capítulo se presentan los principales resultados obtenidos del análisi
 
 1. Identificación de entidades principales:
 
-○ Usuario (cadetes de la empresa).
+○ Usuario (empleados de la empresa).
 
 ○ Proyecto (conjunto de tareas o actividades).
 
-○ Tarea (unidad de trabajo a realizar por un cadete).
+○ Tarea (unidad de trabajo a realizar por un empleado).
 
 ○ Estado (situación de cada tarea).
 
@@ -176,12 +176,16 @@ Se desarrolla el manejo de vistas, vistas indexadas, sus ventajas y el uso de `W
 
 ## CAPÍTULO V: CONCLUSIONES
 
-Nunc sollicitudin purus quis ante sodales luctus. Proin a scelerisque libero, vitae pharetra lacus. Nunc finibus, tellus et dictum semper, nisi sem accumsan ligula, et euismod quam ex a tellus.
+El desarrollo de este proyecto permitió comprender y aplicar de manera integral los conceptos fundamentales de diseño, modelado e implementación de bases de datos relacionales. A partir del caso de estudio —la gestión de tareas y proyectos asignados a los cadetes de una empresa— se logró construir una solución que organiza de forma eficiente la información, evitando la pérdida de datos y facilitando el seguimiento de actividades.
+
+Durante el proceso se identificaron claramente las entidades principales del sistema y sus relaciones, elaborando un modelo entidad-relación coherente y bien estructurado. A partir de ello, se avanzó en la creación del esquema relacional, la definición del diccionario de datos y el análisis de integridad mediante claves primarias, foráneas y restricciones. Esto permitió asegurar un diseño sólido, libre de redundancias y alineado con las buenas prácticas de normalización.
+
+La investigación y aplicación de los temas específicos de la cátedra —procedimientos y funciones almacenadas, optimización mediante índices, manejo de transacciones y vistas indexadas— aportaron una comprensión más profunda del funcionamiento interno de los sistemas gestores de bases de datos (SGBD). Cada uno de estos elementos contribuyó a mejorar el rendimiento, la seguridad, la organización y la consistencia del modelo implementado, demostrando su importancia en soluciones de la vida real.
+
+En síntesis, el proyecto permitió integrar teoría y práctica para diseñar una base de datos funcional, escalable y orientada a resolver una problemática concreta en un contexto organizacional. La experiencia adquirida no solo fortaleció conocimientos técnicos, sino que también fomentó el trabajo colaborativo, la capacidad de análisis y la toma de decisiones fundamentadas en el diseño de sistemas de información.
 
 ## BIBLIOGRAFÍA DE CONSULTA
 
-1.  List item
-2.  List item
-3.  List item
-4.  List item
-5.  List item
+1.  Begg, C. E., & Connolly, T. M. (2005). Sistemas de bases de datos: un enfoque práctico para diseño, implementación y gestión. España: Pearson Educación.
+
+2. Microsoft. (s.f.). Documentación técnica de SQL Server. Recuperado de https://learn.microsoft.com/es-es/sql/sql-server/?view=sql-server-ver16
