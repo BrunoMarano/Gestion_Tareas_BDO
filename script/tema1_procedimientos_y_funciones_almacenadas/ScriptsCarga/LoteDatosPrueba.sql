@@ -28,3 +28,10 @@ VALUES
     ('Diseñar Mockups UI', 'Crear mockups en Figma para el home', '2025-11-20', 1, 1, 1),
     ('Definir Arquitectura BD', 'Modelado de la base de datos inicial', '2025-11-22', 1, 2, 1),
     ('Configurar Repositorio Git', 'Crear el repo en GitHub y ramas', '2025-11-15', 2, 1, 2);
+
+-- Insertar Comentarios
+INSERT INTO comentario (descripcion, id_tarea, id_usuario) 
+VALUES
+    ('¡Me gusta esa idea para el home!', 1, 2), -- 1er Comentario en Tarea 1
+    ('¿Podemos revisar el modelo de nuevo?', 2, 1), -- 1er Comentario en Tarea 2
+    ('Creo que falta la tabla de logs', 2, 2); -- 2do Comentario en Tarea 2
