@@ -1,4 +1,4 @@
-USE gestion_proyecto;
+USE gestion_tarea;
 GO
 
 --  Calcula los días restantes para la fecha de vencimiento de una tarea.
@@ -11,7 +11,7 @@ BEGIN
     -- Manejo de nulos: si no hay fecha, no se puede calcular
     IF @fecha_vencimiento IS NULL
         RETURN NULL;
-        
+
     RETURN DATEDIFF(DAY, GETDATE(), @fecha_vencimiento);  --  Realiza el cálculo
 END;
 GO;

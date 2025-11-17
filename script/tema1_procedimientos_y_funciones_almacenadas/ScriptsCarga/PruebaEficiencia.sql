@@ -1,4 +1,4 @@
-USE gestion_proyecto;
+USE gestion_tarea;
 GO
 
 --  Comparacion de eficiencia

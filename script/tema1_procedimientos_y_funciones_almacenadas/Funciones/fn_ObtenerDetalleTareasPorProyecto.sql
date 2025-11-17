@@ -1,4 +1,4 @@
-USE gestion_proyecto;
+USE gestion_tarea;
 GO
 
 --  Muestra un listado detallado de las tareas de un proyecto específico.

@@ -1,4 +1,4 @@
-﻿USE gestion_proyecto;
+﻿USE gestion_tareas;
 
 /*Escribir el código Transact SQL que permita definir una transacción consistente en:
 Insertar un registro en alguna tabla, luego otro registro en otra tabla 

@@ -1,11 +1,7 @@
--- SCRIPT TEMA "nombre del tema"
--- DEFINNICIÓN DEL MODELO DE DATOS
-DROP DATABASE gestion_proyecto;
-
-CREATE DATABASE gestion_proyecto;
+CREATE DATABASE gestion_tarea;
 GO
 
-USE gestion_proyecto;
+USE gestion_tarea; 
 GO 
 
 CREATE TABLE usuario

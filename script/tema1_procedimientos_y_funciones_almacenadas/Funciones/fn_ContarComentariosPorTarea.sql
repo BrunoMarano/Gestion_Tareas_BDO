@@ -1,4 +1,4 @@
-USE gestion_proyecto;
+USE gestion_tarea;
 GO
 
 --	Cuenta el número total de comentarios que se han hecho en una tarea específica.
