@@ -1,13 +1,14 @@
 USE gestion_proyecto;
 GO
 
+--	Cuenta el número total de comentarios que se han hecho en una tarea específica.
 CREATE FUNCTION fn_ContarComentariosPorTarea (
-    @id_tarea INT
+    @id_tarea INT --	El parametro seguido del tipo de dato
 )
-RETURNS INT
+RETURNS INT --  El tipo de valor que retorna
 AS
 BEGIN
-    DECLARE @Conteo INT;
+    DECLARE @Conteo INT;  --	Realiza cálculos
 
     SELECT @Conteo = COUNT(*)
     FROM comentario
