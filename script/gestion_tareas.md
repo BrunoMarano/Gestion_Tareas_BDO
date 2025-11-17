@@ -17,30 +17,30 @@
 
 ### Caso de estudio
 
-El presente trabajo práctico tiene como finalidad el diseño y modelado de una base de datos para la gestión de cadetes dentro de una empresa. El sistema busca organizar de manera eficiente las tareas y proyectos que los cadetes deben realizar, asegurando un mejor seguimiento de sus responsabilidades, roles y estados de avance.
+El presente trabajo práctico tiene como finalidad el diseño y modelado de una base de datos para la gestión de tareas dentro de una empresa. El sistema busca organizar de manera eficiente las tareas y proyectos que los empleados deben realizar, asegurando un mejor seguimiento de sus responsabilidades, roles y estados de avance.
 
 ### Definición o planteamiento del problema
 
-En muchas empresas, los cadetes cumplen un rol esencial para realizar tareas externas (trámites, entregas, correspondencia, compras, etc.), pero a menudo la asignación y control de esas tareas se realiza de manera manual o informal, lo que genera varios inconvenientes:
+En muchas empresas, los empleados cumplen un rol esencial para realizar tareas externas (trámites, entregas, correspondencia, compras, etc.), pero a menudo la asignación y control de esas tareas se realiza de manera manual o informal, lo que genera varios inconvenientes:
 ● Pérdida de información sobre las tareas realizadas.
 
-● Dificultad para hacer un seguimiento del estado de cada trámite.
+● Dificultad para hacer un seguimiento del estado de cada tarea.
 
-● Problemas en la asignación de responsabilidades entre los cadetes.
+● Problemas en la asignación de responsabilidades entre los empleados.
 
 ● Falta de un registro histórico que permita evaluar eficiencia y desempeño.
 
-Ante esta situación, surge la necesidad de un sistema de base de datos que permita centralizar la información de los proyectos y tareas de los cadetes, mejorando el control, la organización y el análisis de la información.
+Ante esta situación, surge la necesidad de un sistema de base de datos que permita centralizar la información de los proyectos y tareas de los empleados, mejorando el control, la organización y el análisis de la información.
 
 Objetivo General:
-Desarrollar una base de datos que permita gestionar las tareas y proyectos de los cadetes de una empresa, garantizando la asignación eficiente de actividades, el control de estados y la trazabilidad de la información.
+Desarrollar una base de datos que permita gestionar las tareas y proyectos de los empleados de una empresa, garantizando la asignación eficiente de actividades, el control de estados y la trazabilidad de la información.
 Objetivos Específicos:
-● Diseñar un modelo de datos que contemple usuarios (cadetes), proyectos, tareas, estados, categorías y roles.
-● Implementar una estructura que permita asignar tareas a cadetes de manera clara y controlada.
+● Diseñar un modelo de datos que contemple usuarios (empleados), proyectos, tareas, estados, categorías y roles.
+● Implementar una estructura que permita asignar tareas a empleados de manera clara y controlada.
 
 ● Registrar los estados de cada tarea (pendiente, en proceso, finalizada, cancelada).
 
-● Clasificar las tareas por categorías para un mejor análisis (ejemplo: trámites bancarios, mensajería, compras).
+● Clasificar las tareas por categorías para un mejor análisis (ejemplo: trámites, mensajería, compras).
 
 ● Incorporar comentarios como mecanismo de seguimiento de cada actividad.
 
@@ -48,29 +48,37 @@ Objetivos Específicos:
 
 ## CAPITULO II: MARCO CONCEPTUAL O REFERENCIAL
 
-En la actualidad, las empresas buscan optimizar la gestión de tareas internas y externas para mejorar su productividad. Los cadetes cumplen un rol fundamental, ya que son responsables de trámites, entregas, correspondencia y diversas actividades que requieren organización y control.
+En la actualidad, las empresas buscan optimizar la gestión de tareas internas y externas para mejorar su productividad. Los empleados cumplen un rol fundamental, ya que son responsables de trámites, entregas, correspondencia y diversas actividades que requieren organización y control.
 El diseño de una base de datos relacional permite centralizar y estructurar la información relacionada con estas tareas, garantizando integridad, trazabilidad y eficiencia en la administración.
 Los conceptos fundamentales que sustentan el proyecto son:
 ● Base de datos relacional: modelo que organiza la información en tablas relacionadas entre sí mediante claves primarias y foráneas, garantizando la integridad de los datos.
 
 ● Gestión de tareas: práctica que permite organizar, asignar y controlar actividades específicas de una organización, mejorando la productividad y evitando pérdidas de información.
 
-● Roles y usuarios: cada participante del sistema tiene un rol definido (ejemplo: cadete, supervisor), lo que permite controlar permisos y responsabilidades.
+● Roles y usuarios: cada participante del sistema tiene un rol definido (ejemplo: empleado, supervisor), lo que permite controlar permisos y responsabilidades.
 
 ● Estados de tareas: permiten conocer en qué situación se encuentra cada actividad (pendiente, en curso, finalizada, cancelada).
 
-● Categorías de tareas: posibilitan clasificar los distintos tipos de actividades (ejemplo: trámites bancarios, compras, mensajería).
+● Categorías de tareas: posibilitan clasificar los distintos tipos de actividades (ejemplo: trámites, compras, mensajería).
 
 ● TICs (Tecnologías de la Información y la Comunicación): proporcionan herramientas que permiten digitalizar procesos que tradicionalmente se realizaban de forma manual.
 
-De este modo, el sistema se fundamenta en innovaciones tecnológicas aplicadas a la gestión organizacional, contribuyendo a un mayor control, análisis y planificación de las actividades de los cadetes dentro de una empresa.
+De este modo, el sistema se fundamenta en innovaciones tecnológicas aplicadas a la gestión organizacional, contribuyendo a un mayor control, análisis y planificación de las actividades de los empleados dentro de una empresa.
 
-**TEMA 1 " ---- "**
-Ut sed imperdiet risus. Maecenas vestibulum arcu vitae orci pretium pharetra. Suspendisse potenti. Fusce massa libero, fermentum eget elit in, tincidunt fermentum nunc. Cras imperdiet nisl elit, elementum gravida enim accumsan vel. Sed in sapien quis ante consectetur commodo id non nulla. Aenean lacinia, dolor convallis semper mattis, ante orci elementum nunc, eget feugiat risus neque in urna. Ut ut quam nec risus mollis convallis ornare ac odio. Phasellus efficitur posuere nibh, eget tempor augue pellentesque ac. Ut enim sem, imperdiet non est ut, blandit posuere dui. Curabitur at purus orci. Interdum et malesuada fames ac ante ipsum primis in faucibus.
+**TEMA 1 " Procedimientos y Funciones Almacenadas "** 
+Para el Tema 1 investigamos en profundidad sobre los procedimientos y funciones almacenadas, elementos esenciales para estructurar y optimizar la lógica dentro de una base de datos SQL Server. Los procedimientos almacenados permiten ejecutar operaciones complejas, realizar tareas CRUD, manejar transacciones y encapsular la lógica de negocio, logrando mejor rendimiento gracias a los planes de ejecución cacheados y mayor seguridad al otorgar solo permisos de ejecución. Por otro lado, las funciones almacenadas están orientadas exclusivamente al cálculo: siempre devuelven un valor, ya sea escalar o una tabla, y no pueden modificar datos, lo que las hace ideales para usarse dentro de SELECT, WHERE o JOIN. Además, facilitan la reutilización de lógica y la escritura de consultas más limpias. En conclusión, los procedimientos se utilizan principalmente para acciones y manipulación de datos, mientras que las funciones se emplean para cálculos y obtener información de manera controlada.
 
-**TEMA 2 " ----- "**
-Ut sed imperdiet risus. Maecenas vestibulum arcu vitae orci pretium pharetra. Suspendisse potenti. Fusce massa libero, fermentum eget elit in, tincidunt fermentum nunc. Cras imperdiet nisl elit, elementum gravida enim accumsan vel. Sed in sapien quis ante consectetur commodo id non nulla. Aenean lacinia, dolor convallis semper mattis, ante orci elementum nunc, eget feugiat risus neque in urna. Ut ut quam nec risus mollis convallis ornare ac odio. Phasellus efficitur posuere nibh, eget tempor augue pellentesque ac. Ut enim sem, imperdiet non est ut, blandit posuere dui. Curabitur at purus orci. Interdum et malesuada fames ac ante ipsum primis in faucibus.
 
+**TEMA 2 " Optimización de Consultas a Través de Índices "** 
+En el Tema 2 investigamos la importancia de los índices como herramienta fundamental para mejorar el rendimiento de las consultas en una base de datos. Los índices funcionan como estructuras ordenadas que almacenan una copia parcial de ciertas columnas, permitiendo que el motor encuentre datos rápidamente sin recorrer toda la tabla. Esto acelera notablemente las consultas SELECT, especialmente en tablas grandes, aunque a la vez degrada el rendimiento de INSERT, UPDATE y DELETE, ya que cada cambio en la tabla también debe reflejarse en el índice. Existen índices agrupados (que organizan físicamente los datos según el índice) y no agrupados (que funcionan como un índice de libro, apuntando a la ubicación real de los datos). Su estructura interna se basa en árboles B, con nodos internos que guían la búsqueda y nodos hoja que contienen ya sea datos reales (agrupado) o punteros (no agrupado). Además, comprendimos que el motor de SQL Server utiliza el plan de ejecución estimado para decidir la forma más eficiente de acceder a los datos, aprovechando los índices disponibles. En conclusión, los índices son esenciales para optimizar tiempos de lectura y mejorar el desempeño general de consultas complejas.
+
+**TEMA 3 " Manejo de Transacciones y Transacciones Anidadas "** 
+En este tema investigamos el funcionamiento de las transacciones, un mecanismo fundamental para garantizar la integridad y consistencia de los datos en una base de datos. Una transacción agrupa varias operaciones SQL que deben ejecutarse como una unidad: o se completan todas correctamente o se revierten por completo, siguiendo las propiedades ACID que aseguran atomicidad, consistencia, aislamiento y durabilidad. También estudiamos las transacciones anidadas, que permiten dividir un proceso complejo en subtransacciones e incorporar puntos de guardado mediante SAVE TRANSACTION, lo que facilita manejar errores parciales sin afectar inmediatamente a toda la transacción principal. Entendimos que, aunque SQL Server no soporta transacciones anidadas de forma total, sí permite controlarlas a través de savepoints, que funcionan como “marcas” para revertir solo una parte del proceso. Mediante ejemplos prácticos, vimos cómo una transacción simple puede confirmar o revertir operaciones completas, mientras que una transacción anidada otorga mayor control ante fallos específicos dentro de un bloque mayor. En resumen, dominar las transacciones y sus variantes es clave para asegurar que los datos permanezcan fiables incluso ante errores en la ejecución.
+
+**TEMA 4: " Vistas y Vistas Indexadas "**
+En este tema investigamos el funcionamiento de las vistas, un objeto de base de datos que permite representar el resultado de una consulta SQL sin almacenar datos físicamente. Comprendimos que una vista funciona como una “ventana” a los datos, ya que toma su información directamente de las tablas base, lo cual facilita simplificar consultas complejas, mejorar la seguridad restringiendo columnas sensibles y reutilizar lógica SQL sin duplicar código. Además, estudiamos las vistas indexadas, que se diferencian de las vistas comunes porque almacenan físicamente el resultado mediante un índice clustered único, convirtiéndose en una estructura materializada que acelera muchísimo consultas frecuentes o agregadas. Sin embargo, también analizamos que su mantenimiento es más costoso, ya que cada modificación en las tablas subyacentes debe reflejarse en la vista.
+
+Vimos que para crear una vista indexada deben cumplirse requisitos estrictos, como el uso obligatorio de WITH SCHEMABINDING, que “ata” la vista a sus tablas y evita que estas puedan modificarse sin antes eliminar la vista. También observamos que todas las tablas deben estar referenciadas con su esquema (por ejemplo, dbo.usuarios) y que no se pueden usar otras vistas dentro de la definición. Luego de crear la vista, se debe generar un índice clustered único que materializa efectivamente los datos. Esto permite que SQL Server consulte la vista mucho más rápido sin tener que recalcularla cada vez. Finalmente, comprendimos que aunque las vistas comunes sirven principalmente para organización, seguridad y simplificación, las vistas indexadas se orientan específicamente a la mejora del rendimiento.
 ...
 
 ## CAPÍTULO III: METODOLOGÍA SEGUIDA
@@ -105,11 +113,11 @@ En este capítulo se presentan los principales resultados obtenidos del análisi
 
 1. Identificación de entidades principales:
 
-○ Usuario (cadetes de la empresa).
+○ Usuario (empleados de la empresa).
 
 ○ Proyecto (conjunto de tareas o actividades).
 
-○ Tarea (unidad de trabajo a realizar por un cadete).
+○ Tarea (unidad de trabajo a realizar por un empleado).
 
 ○ Estado (situación de cada tarea).
 
@@ -127,52 +135,57 @@ En este capítulo se presentan los principales resultados obtenidos del análisi
 
 ○ Se garantiza la integridad de los datos a través de claves primarias y foráneas.
 
-### Diagrama conceptual (opcional)
-
-Ejemplo usando Live Editor https://mermaid.js.org/ (ejemplo opcional)
-
-```mermaid
-erDiagram
-CUSTOMER  }|..|{  DELIVERY-ADDRESS  : has
-CUSTOMER  ||--o{  ORDER  : places
-CUSTOMER  ||--o{  INVOICE  : "liable for"
-DELIVERY-ADDRESS  ||--o{  ORDER  : receives
-INVOICE  ||--|{  ORDER  : covers
-ORDER  ||--|{  ORDER-ITEM  : includes
-PRODUCT-CATEGORY  ||--|{  PRODUCT  : contains
-PRODUCT  ||--o{  ORDER-ITEM  : "ordered in"
-```
-
 ### Diagrama relacional
 
-![diagrama_relacional](https://github.com/dovillegas/basesdatos_proyecto_estudio/blob/main/doc/image_relational.png)
+![diagrama_relacional](../doc/diagrama_relacional_proyecto.jpeg)
+
 
 ### Diccionario de datos
 
-Acceso al documento [PDF](doc/diccionario_datos.pdf) del diccionario de datos.
+Acceso al documento [PDF](../doc/diccionario_datos.pdf) del diccionario de datos.
 
-### Desarrollo TEMA 1 "----"
+## Desarrollo TEMA 1: Procedimientos y Funciones Almacenadas
+Aquí se desarrolla el contenido correspondiente al uso, creación y manejo de procedimientos almacenados y funciones dentro del sistema gestor de base de datos.
 
-Fusce auctor finibus lectus, in aliquam orci fermentum id. Fusce sagittis lacus ante, et sodales eros porta interdum. Donec sed lacus et eros condimentum posuere.
+🔗 Acceder a la carpeta del tema:  
+**[scripts → tema1_procedimientos_y_funciones_almacenadas](tema1_procedimientos_y_funciones_almacenadas/)**
 
-> Acceder a la siguiente carpeta para la descripción completa del tema [scripts-> tema_1](script/tema01_nombre_tema)
+---
 
-### Desarrollo TEMA 2 "----"
+## Desarrollo TEMA 2: Optimización de Consultas a Través de Índices
+Este apartado aborda la creación y análisis de índices, así como su impacto en el rendimiento de las consultas SQL.
 
-Proin aliquet mauris id ex venenatis, eget fermentum lectus malesuada. Maecenas a purus arcu. Etiam pellentesque tempor dictum.
+🔗 Acceder a la carpeta del tema:  
+**[scripts → tema2_optimizacion_de_consultas_a_traves_de_indices](tema2_optimizacion_de_consultas_a_traves_de_indices/)**
 
-> Acceder a la siguiente carpeta para la descripción completa del tema [scripts-> tema_2](script/tema02_nombre_tema)
+---
 
-...
+## Desarrollo TEMA 3: Manejo de Transacciones y Transacciones Anidadas
+Aquí se explica el concepto de transacción, sus propiedades ACID y la implementación de transacciones anidadas.
+
+🔗 Acceder a la carpeta del tema:  
+**[scripts → tema3_manejo_de_transacciones_y_transacciones_anidadas](tema3_manejo_de_transacciones_y_transacciones_anidadas/)**
+
+---
+
+## Desarrollo TEMA 4: Vistas y Vistas Indexadas
+Se desarrolla el manejo de vistas, vistas indexadas, sus ventajas y el uso de `WITH SCHEMABINDING`.
+
+🔗 Acceder a la carpeta del tema:  
+**[scripts → tema4_vistas_vistas_indexadas](tema4_vistas_vistas_indexadas/)**
 
 ## CAPÍTULO V: CONCLUSIONES
 
-Nunc sollicitudin purus quis ante sodales luctus. Proin a scelerisque libero, vitae pharetra lacus. Nunc finibus, tellus et dictum semper, nisi sem accumsan ligula, et euismod quam ex a tellus.
+El desarrollo de este proyecto permitió comprender y aplicar de manera integral los conceptos fundamentales de diseño, modelado e implementación de bases de datos relacionales. A partir del caso de estudio —la gestión de tareas y proyectos asignados a los cadetes de una empresa— se logró construir una solución que organiza de forma eficiente la información, evitando la pérdida de datos y facilitando el seguimiento de actividades.
+
+Durante el proceso se identificaron claramente las entidades principales del sistema y sus relaciones, elaborando un modelo entidad-relación coherente y bien estructurado. A partir de ello, se avanzó en la creación del esquema relacional, la definición del diccionario de datos y el análisis de integridad mediante claves primarias, foráneas y restricciones. Esto permitió asegurar un diseño sólido, libre de redundancias y alineado con las buenas prácticas de normalización.
+
+La investigación y aplicación de los temas específicos de la cátedra —procedimientos y funciones almacenadas, optimización mediante índices, manejo de transacciones y vistas indexadas— aportaron una comprensión más profunda del funcionamiento interno de los sistemas gestores de bases de datos (SGBD). Cada uno de estos elementos contribuyó a mejorar el rendimiento, la seguridad, la organización y la consistencia del modelo implementado, demostrando su importancia en soluciones de la vida real.
+
+En síntesis, el proyecto permitió integrar teoría y práctica para diseñar una base de datos funcional, escalable y orientada a resolver una problemática concreta en un contexto organizacional. La experiencia adquirida no solo fortaleció conocimientos técnicos, sino que también fomentó el trabajo colaborativo, la capacidad de análisis y la toma de decisiones fundamentadas en el diseño de sistemas de información.
 
 ## BIBLIOGRAFÍA DE CONSULTA
 
-1.  List item
-2.  List item
-3.  List item
-4.  List item
-5.  List item
+1.  Begg, C. E., & Connolly, T. M. (2005). Sistemas de bases de datos: un enfoque práctico para diseño, implementación y gestión. España: Pearson Educación.
+
+2. Microsoft. (s.f.). Documentación técnica de SQL Server. Recuperado de https://learn.microsoft.com/es-es/sql/sql-server/?view=sql-server-ver16

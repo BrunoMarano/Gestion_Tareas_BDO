@@ -1,19 +1,3 @@
-CREATE DATABASE proyecto_gestion_cadetes;
-GO
-
-USE proyecto_gestion_cadetes;
-GO
-
-CREATE TABLE usuario
-(
-  id_usuario INT NOT NULL,
-  nombre VARCHAR(50) NOT NULL,
-  email VARCHAR(200) NOT NULL,
-  password VARCHAR(255) NOT NULL,
-  PRIMARY KEY (id_usuario),
-  UNIQUE (email)
-);
-GO
 
 --Crear una vista sobre alguna tabla que solo muestre algunos campos de la misma.
 CREATE VIEW vista_usuario AS 
@@ -24,11 +8,7 @@ SELECT
 FROM usuario;
 GO
 
---Realizar insert de un lote de datos sobre la vista reciÈn creada. 
-ALTER TABLE usuario
-ADD CONSTRAINT df_usuario_password DEFAULT 'temporal123' FOR password;
-GO
-
+--Realizar insert de un lote de datos sobre la vista reciÔøΩn creada. 
 INSERT INTO vista_usuario (id_usuario, nombre, email)
 VALUES
 	(1, 'Enzo Barrios', 'enzobarrios@gmail.com'),
@@ -43,7 +23,7 @@ GO
 
 --Realizar update sobre algunos de los registros creados 
 UPDATE vista_usuario
-SET nombre = 'Franco BenjamÌn DÌaz'
+SET nombre = 'Franco BenjamÔøΩn DÔøΩaz'
 WHERE email = 'francobdz@gmail.com';
 GO
 
@@ -51,7 +31,7 @@ GO
 SELECT * FROM usuario;
 GO
 
---Borrar todos los registros insertados a travÈs de la vista.
+--Borrar todos los registros insertados a travÔøΩs de la vista.
 DELETE FROM vista_usuario
 WHERE id_usuario > 0;
 GO
@@ -59,7 +39,7 @@ GO
 SELECT * FROM vista_usuario;
 GO
 
---Crear un Ìndice sobre alguna de las columnas sobre la vista  reciÈn creada.
+--Crear un ÔøΩndice sobre alguna de las columnas sobre la vista reciÔøΩn creada.
 
 CREATE VIEW vista_usuario_indexada WITH SCHEMABINDING 
 AS
@@ -67,87 +47,28 @@ SELECT id_usuario, nombre, email
 FROM dbo.usuario;
 GO
 
+--Ver si la vista est√° creada:
+SELECT *
+FROM sys.views
+WHERE name = 'vista_usuario_indexada';
+
+--Un √≠ndice clustered en la vista significa que SQL Server guarda los datos f√≠sicamente, acelerando consultas.
 CREATE UNIQUE CLUSTERED INDEX IX_vista_usuario_indexada_id ON vista_usuario_indexada (id_usuario);
 GO
 
+--Ver si tiene un √≠ndice √∫nico cluster creado:
+SELECT *
+FROM sys.indexes
+WHERE object_id = OBJECT_ID('vista_usuario_indexada');
+
+
+--Ver si est√° ‚Äúmaterializada‚Äù
+SELECT name, type_desc
+FROM sys.indexes
+WHERE object_id = OBJECT_ID('vista_usuario_indexada');
+
+
+SELECT * FROM vista_usuario_indexada;  --Debe devolver los datos normales.
+
 -----------------------------------------------------------------
-
-CREATE TABLE proyecto
-(
-  id_proyecto INT NOT NULL,
-  nombre VARCHAR(100) NOT NULL,
-  descripcion VARCHAR(200),
-  fecha_creacion DATE NOT NULL,
-  fecha_fin DATE,
-  PRIMARY KEY (id_proyecto)
-);
-
-CREATE TABLE estado
-(
-  id_estado INT NOT NULL,
-  tipo_esatdo VARCHAR(50) NOT NULL,
-  PRIMARY KEY (id_estado)
-);
-
-CREATE TABLE tarea
-(
-  id_tarea INT NOT NULL,
-  titulo VARCHAR(150) NOT NULL,
-  descripcion VARCHAR(200),
-  fecha_creacion DATE NOT NULL,
-  fecha_vencimiento DATE,
-  id_proyecto INT NOT NULL,
-  id_responsable INT NOT NULL,
-  id_estado INT NOT NULL,
-  PRIMARY KEY (id_tarea),
-  FOREIGN KEY (id_proyecto) REFERENCES proyecto(id_proyecto),
-  FOREIGN KEY (id_responsable) REFERENCES usuario(id_usuario),
-  FOREIGN KEY (id_estado) REFERENCES estado(id_estado)
-);
-
-CREATE TABLE categoria
-(
-  id_categoria INT NOT NULL,
-  tipo_categoria VARCHAR(50) NOT NULL,
-  PRIMARY KEY (id_categoria)
-);
-
-CREATE TABLE rol
-(
-  id_rol INT NOT NULL,
-  tipo_rol VARCHAR(50) NOT NULL,
-  PRIMARY KEY (id_rol)
-);
-
-CREATE TABLE comentario
-(
-  descripcion VARCHAR(200) NOT NULL,
-  fecha_comentario DATE NOT NULL,
-  id_comentario INT NOT NULL,
-  id_tarea INT NOT NULL,
-  id_usuario INT NOT NULL,
-  PRIMARY KEY (id_comentario),
-  FOREIGN KEY (id_tarea) REFERENCES tarea(id_tarea),
-  FOREIGN KEY (id_usuario) REFERENCES usuario(id_usuario)
-);
-
-CREATE TABLE asignacion
-(
-  id_usuario INT NOT NULL,
-  id_proyecto INT NOT NULL,
-  id_rol INT NOT NULL,
-  PRIMARY KEY (id_usuario, id_proyecto),
-  FOREIGN KEY (id_usuario) REFERENCES usuario(id_usuario),
-  FOREIGN KEY (id_proyecto) REFERENCES proyecto(id_proyecto),
-  FOREIGN KEY (id_rol) REFERENCES rol(id_rol)
-);
-
-CREATE TABLE tarea_categoria
-(
-  id_categoria INT NOT NULL,
-  id_tarea INT NOT NULL,
-  PRIMARY KEY (id_categoria, id_tarea),
-  FOREIGN KEY (id_categoria) REFERENCES categoria(id_categoria),
-  FOREIGN KEY (id_tarea) REFERENCES tarea(id_tarea)
-);
 
